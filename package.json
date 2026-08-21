@@ -1,0 +1,10 @@
+{
+  "name": "morent-thue-xe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Morent — Website cho thuê xe ô tô (đồ án Thiết kế Web · ĐỀ07).",
+  "scripts": {
+    "dev": "npx --yes tailwindcss@3.4.17 -c tailwind.config.js -i src/input.css -o dist/output.css --watch",
+    "build": "npx --yes tailwindcss@3.4.17 -c tailwind.config.js -i src/input.css -o dist/output.css --minify"
+  }
+}

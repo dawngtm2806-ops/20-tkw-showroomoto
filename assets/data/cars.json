@@ -1,0 +1,355 @@
+[
+  {
+    "id": "koenigsegg",
+    "name": "Koenigsegg",
+    "brand": "Koenigsegg",
+    "type": "Sport",
+    "fuel": "Xăng",
+    "tank": "90L",
+    "transmission": "Số sàn",
+    "seats": 2,
+    "year": 2022,
+    "price": 2500000,
+    "oldPrice": 0,
+    "rating": 4.9,
+    "tags": [
+      "popular",
+      "recommend"
+    ],
+    "color": "#F2F4F7",
+    "colors": [
+      "#F2F4F7",
+      "#1A202C",
+      "#ED3F3F"
+    ],
+    "img": "assets/img/cars/sport.png",
+    "specs": {
+      "engine": "5.0L V8 Twin-Turbo",
+      "power": "1.280 mã lực",
+      "torque": "1.106 Nm",
+      "consumption": "16 L/100km",
+      "accel": "2.8s (0-100)",
+      "length": "4.293 mm",
+      "tank": "90 L",
+      "drivetrain": "Cầu sau (RWD)"
+    },
+    "desc": "Siêu xe thể thao hiệu năng đỉnh cao, thiết kế khí động học và khả năng tăng tốc ấn tượng — trải nghiệm thuê xe khó quên.",
+    "priceUsd": 99,
+    "oldUsd": 0,
+    "descEn": "A top-tier performance supercar with aerodynamic design and stunning acceleration — an unforgettable rental experience.",
+    "scale": 0.85
+  },
+  {
+    "id": "nissan-gtr",
+    "name": "Nissan GT-R",
+    "brand": "Nissan",
+    "type": "Sport",
+    "fuel": "Xăng",
+    "tank": "80L",
+    "transmission": "Số tự động",
+    "seats": 2,
+    "year": 2022,
+    "price": 2000000,
+    "oldPrice": 2500000,
+    "rating": 4.8,
+    "tags": [
+      "popular",
+      "recommend"
+    ],
+    "color": "#C3D4E9",
+    "colors": [
+      "#C3D4E9",
+      "#1A202C",
+      "#3563E9"
+    ],
+    "img": "assets/img/cars/sedan.png",
+    "specs": {
+      "engine": "3.8L V6 Twin-Turbo",
+      "power": "565 mã lực",
+      "torque": "633 Nm",
+      "consumption": "11 L/100km",
+      "accel": "2.9s (0-100)",
+      "length": "4.710 mm",
+      "tank": "74 L",
+      "drivetrain": "2 cầu (AWD)"
+    },
+    "desc": "Sports car with the best design and acceleration — biểu tượng xe thể thao Nhật với hệ dẫn động 4 bánh, mạnh mẽ và bám đường.",
+    "priceUsd": 80,
+    "oldUsd": 100,
+    "descEn": "Sports car with the best design and acceleration — an iconic Japanese sports car with smart all-wheel drive, powerful and grippy."
+  },
+  {
+    "id": "rolls-royce",
+    "name": "Rolls-Royce",
+    "brand": "Rolls-Royce",
+    "type": "Sedan",
+    "fuel": "Xăng",
+    "tank": "70L",
+    "transmission": "Số tự động",
+    "seats": 4,
+    "year": 2022,
+    "price": 2400000,
+    "oldPrice": 0,
+    "rating": 4.9,
+    "tags": [
+      "recommend"
+    ],
+    "color": "#3563E9",
+    "colors": [
+      "#3563E9",
+      "#1A202C",
+      "#F2F4F7"
+    ],
+    "img": "assets/img/cars/lux.png",
+    "specs": {
+      "engine": "6.75L V12",
+      "power": "563 mã lực",
+      "torque": "900 Nm",
+      "consumption": "15 L/100km",
+      "accel": "4.9s (0-100)",
+      "length": "5.762 mm",
+      "tank": "82 L",
+      "drivetrain": "Cầu sau (RWD)"
+    },
+    "desc": "Đỉnh cao sang trọng và tinh tế, khoang lái êm ái tuyệt đối — lựa chọn thuê xe hoàn hảo cho những dịp đặc biệt.",
+    "priceUsd": 96,
+    "oldUsd": 0,
+    "descEn": "The pinnacle of luxury and refinement with an ultra-smooth cabin — the perfect rental choice for special occasions.",
+    "tf": "scale(.82)"
+  },
+  {
+    "id": "all-new-rush",
+    "name": "All New Rush",
+    "brand": "Toyota",
+    "type": "SUV",
+    "fuel": "Xăng",
+    "tank": "70L",
+    "transmission": "Số tự động",
+    "seats": 6,
+    "year": 2022,
+    "price": 1200000,
+    "oldPrice": 1400000,
+    "rating": 4.6,
+    "tags": [
+      "popular"
+    ],
+    "color": "#8895A7",
+    "colors": [
+      "#8895A7",
+      "#1A202C",
+      "#F2F4F7"
+    ],
+    "img": "assets/img/cars/suv-blue.png",
+    "specs": {
+      "engine": "1.5L Dual VVT-i",
+      "power": "104 mã lực",
+      "torque": "136 Nm",
+      "consumption": "7.0 L/100km",
+      "accel": "12.0s (0-100)",
+      "length": "4.435 mm",
+      "tank": "47 L",
+      "drivetrain": "Cầu sau (RWD)"
+    },
+    "desc": "SUV 7 chỗ gầm cao đa dụng, rộng rãi và tiết kiệm — phù hợp thuê cho những chuyến đi gia đình và nhóm bạn.",
+    "priceUsd": 72,
+    "oldUsd": 80,
+    "descEn": "A versatile 7-seat SUV with high ground clearance, spacious and economical — ideal to rent for family and group trips."
+  },
+  {
+    "id": "honda-crv",
+    "name": "CR-V",
+    "brand": "Honda",
+    "type": "SUV",
+    "fuel": "Xăng",
+    "tank": "80L",
+    "transmission": "Số tự động",
+    "seats": 6,
+    "year": 2022,
+    "price": 1400000,
+    "oldPrice": 0,
+    "rating": 4.7,
+    "tags": [
+      "popular",
+      "recommend"
+    ],
+    "color": "#5A3B26",
+    "colors": [
+      "#5A3B26",
+      "#1A202C",
+      "#F2F4F7"
+    ],
+    "img": "assets/img/cars/suv-brown.png",
+    "specs": {
+      "engine": "1.5L VTEC Turbo",
+      "power": "188 mã lực",
+      "torque": "240 Nm",
+      "consumption": "7.5 L/100km",
+      "accel": "9.5s (0-100)",
+      "length": "4.621 mm",
+      "tank": "57 L",
+      "drivetrain": "Cầu trước (FWD)"
+    },
+    "desc": "SUV đô thị rộng rãi, động cơ tăng áp mạnh mẽ và nhiều công nghệ an toàn — thoải mái cho mọi hành trình thuê xe.",
+    "priceUsd": 80,
+    "oldUsd": 0,
+    "descEn": "A spacious urban SUV with a powerful turbo engine and plenty of safety tech — comfortable for every rental journey.",
+    "scale": 0.72,
+    "tf": "scale(.9,1.1)"
+  },
+  {
+    "id": "all-new-terios",
+    "name": "All New Terios",
+    "brand": "Daihatsu",
+    "type": "SUV",
+    "fuel": "Xăng",
+    "tank": "90L",
+    "transmission": "Số tự động",
+    "seats": 6,
+    "year": 2022,
+    "price": 1100000,
+    "oldPrice": 0,
+    "rating": 4.5,
+    "tags": [
+      "recommend"
+    ],
+    "color": "#1A202C",
+    "colors": [
+      "#1A202C",
+      "#C3D4E9",
+      "#ED3F3F"
+    ],
+    "img": "assets/img/cars/terios.png",
+    "specs": {
+      "engine": "1.5L Dual VVT-i",
+      "power": "103 mã lực",
+      "torque": "134 Nm",
+      "consumption": "7.2 L/100km",
+      "accel": "12.5s (0-100)",
+      "length": "4.455 mm",
+      "tank": "45 L",
+      "drivetrain": "Cầu sau (RWD)"
+    },
+    "desc": "SUV nhỏ gọn, linh hoạt trong phố và bền bỉ — lựa chọn thuê xe kinh tế cho các chuyến đi hằng ngày.",
+    "priceUsd": 74,
+    "oldUsd": 0,
+    "descEn": "A compact, agile and durable city SUV — an economical rental choice for everyday trips.",
+    "scale": 0.68
+  },
+  {
+    "id": "mg-zx-exclusive",
+    "name": "MG ZX Exclusive",
+    "brand": "MG",
+    "type": "Hatchback",
+    "fuel": "Xăng",
+    "tank": "70L",
+    "transmission": "Số tự động",
+    "seats": 4,
+    "year": 2022,
+    "price": 1000000,
+    "oldPrice": 1200000,
+    "rating": 4.4,
+    "tags": [
+      "popular"
+    ],
+    "color": "#F2F4F7",
+    "colors": [
+      "#F2F4F7",
+      "#1A202C",
+      "#3563E9"
+    ],
+    "img": "assets/img/cars/mg-blue.png",
+    "specs": {
+      "engine": "1.5L DOHC",
+      "power": "114 mã lực",
+      "torque": "150 Nm",
+      "consumption": "6.0 L/100km",
+      "accel": "11.0s (0-100)",
+      "length": "4.314 mm",
+      "tank": "48 L",
+      "drivetrain": "Cầu trước (FWD)"
+    },
+    "desc": "Hatchback trẻ trung, tiết kiệm nhiên liệu, nhiều tiện nghi — phù hợp thuê để di chuyển linh hoạt trong đô thị.",
+    "priceUsd": 76,
+    "oldUsd": 80,
+    "descEn": "A youthful, fuel-efficient hatchback with many amenities — great to rent for flexible city driving.",
+    "scale": 0.66
+  },
+  {
+    "id": "new-mg-zs",
+    "name": "New MG ZS",
+    "brand": "MG",
+    "type": "SUV",
+    "fuel": "Xăng",
+    "tank": "80L",
+    "transmission": "Số tự động",
+    "seats": 6,
+    "year": 2022,
+    "price": 1300000,
+    "oldPrice": 0,
+    "rating": 4.5,
+    "tags": [
+      "recommend"
+    ],
+    "color": "#C3D4E9",
+    "colors": [
+      "#C3D4E9",
+      "#1A202C",
+      "#ED3F3F"
+    ],
+    "img": "assets/img/cars/suv-white.png",
+    "specs": {
+      "engine": "1.5L DOHC",
+      "power": "114 mã lực",
+      "torque": "150 Nm",
+      "consumption": "6.7 L/100km",
+      "accel": "12.4s (0-100)",
+      "length": "4.323 mm",
+      "tank": "48 L",
+      "drivetrain": "Cầu trước (FWD)"
+    },
+    "desc": "SUV đô thị cỡ nhỏ hiện đại, khoang cabin rộng và trang bị công nghệ phong phú với chi phí thuê hợp lý.",
+    "priceUsd": 80,
+    "oldUsd": 0,
+    "descEn": "A modern compact urban SUV with a roomy cabin and rich technology at an affordable rental price.",
+    "scale": 0.68
+  },
+  {
+    "id": "mg-zx-excite",
+    "name": "MG ZX Excite",
+    "brand": "MG",
+    "type": "Hatchback",
+    "fuel": "Điện",
+    "tank": "90L",
+    "transmission": "Số tự động",
+    "seats": 4,
+    "year": 2022,
+    "price": 1050000,
+    "oldPrice": 0,
+    "rating": 4.4,
+    "tags": [
+      "popular"
+    ],
+    "color": "#54A6FF",
+    "colors": [
+      "#54A6FF",
+      "#1A202C",
+      "#F2F4F7"
+    ],
+    "img": "assets/img/cars/mg-blue.png",
+    "specs": {
+      "engine": "Mô-tơ điện",
+      "power": "177 mã lực",
+      "torque": "280 Nm",
+      "consumption": "~320 km/lần sạc",
+      "accel": "8.2s (0-100)",
+      "length": "4.314 mm",
+      "tank": "Pin 51 kWh",
+      "drivetrain": "Cầu trước (FWD)"
+    },
+    "desc": "Hatchback điện năng động, vận hành êm và tiết kiệm — lựa chọn thuê xe xanh cho người yêu công nghệ.",
+    "priceUsd": 74,
+    "oldUsd": 0,
+    "descEn": "A dynamic electric hatchback, smooth and economical — a green choice for tech lovers.",
+    "scale": 0.66
+  }
+]

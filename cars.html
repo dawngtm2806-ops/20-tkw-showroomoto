@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title_cars">Danh mục xe cho thuê | Morent</title>
+  <meta name="description" content="Danh mục xe cho thuê tại Morent — lọc theo hãng, kiểu xe, giá thuê/ngày, số chỗ. Tìm nhanh chiếc xe phù hợp cho chuyến đi." />
+  <meta property="og:title" content="Danh mục xe cho thuê | Morent" />
+  <meta property="og:description" content="Lọc và tìm xe cho thuê theo hãng, kiểu xe, giá thuê/ngày tại Morent." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%233563E9'/%3E%3Cpath d='M4 14l1.5-4A2 2 0 017.4 9h9.2a2 2 0 011.9 1L20 14v3a1 1 0 01-1 1h-1v-1H6v1H5a1 1 0 01-1-1z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" /></noscript>
+  <link rel="stylesheet" href="dist/output.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container-x py-8">
+    <!-- Tiêu đề trang -->
+    <nav aria-label="breadcrumb" class="text-sm text-muted mb-2"><a href="index.html" data-i18n="crumb_home">Trang chủ</a> / <span class="text-ink font-semibold" data-i18n="cars_title">Danh mục xe</span></nav>
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+      <div>
+        <h1 class="section-title" data-i18n="cars_title">Danh mục xe</h1>
+        <p class="section-sub mt-1"><span data-i18n="cars_found_a">Tìm thấy</span> <strong id="result-count" class="text-ink">0</strong> <span data-i18n="cars_found_b">mẫu xe phù hợp</span></p>
+      </div>
+      <div class="flex items-center gap-3">
+        <label for="f-sort" class="text-sm text-muted font-semibold"><span data-i18n="sort_label">Sắp xếp</span>:</label>
+        <select id="f-sort" class="select" style="width:auto">
+          <option value="popular" data-i18n="sort_popular">Phổ biến</option>
+          <option value="price-asc" data-i18n="sort_price_asc">Giá thấp → cao</option>
+          <option value="price-desc" data-i18n="sort_price_desc">Giá cao → thấp</option>
+          <option value="name" data-i18n="sort_name">Tên A → Z</option>
+          <option value="rating" data-i18n="sort_rating">Đánh giá cao nhất</option>
+        </select>
+        <button class="icon-btn lg:hidden" id="filter-toggle" aria-label="Bộ lọc" title="Bộ lọc">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-[280px_1fr]">
+      <!-- Sidebar bộ lọc -->
+      <aside class="card p-5 h-max lg:sticky lg:top-24 hidden lg:block" id="filter-panel">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="font-bold text-lg" data-i18n="f_panel">Bộ lọc</h2>
+          <button class="text-sm text-primary font-semibold" id="filter-reset" data-i18n="f_reset">Đặt lại</button>
+        </div>
+
+        <div class="field mb-5">
+          <label for="f-search" data-i18n="f_searchlabel">Tìm theo tên</label>
+          <input class="input" type="search" id="f-search" placeholder="VD: Camry, CR-V..." data-i18n-ph="f_search_ph" />
+        </div>
+
+        <div class="mb-5">
+          <p class="font-semibold mb-3" data-i18n="f_brand">Hãng xe</p>
+          <div class="grid gap-2 max-h-52 overflow-auto pr-1" id="f-brands"></div>
+        </div>
+
+        <div class="mb-5">
+          <p class="font-semibold mb-3" data-i18n="f_type">Kiểu dáng</p>
+          <div class="flex flex-wrap gap-2" id="f-types"></div>
+        </div>
+
+        <div class="mb-5">
+          <p class="font-semibold mb-3" data-i18n="f_fuel">Nhiên liệu</p>
+          <div class="flex flex-wrap gap-2" id="f-fuels"></div>
+        </div>
+
+        <div class="mb-5">
+          <p class="font-semibold mb-3" data-i18n="f_capacity">Số chỗ</p>
+          <div class="flex flex-wrap gap-2" id="f-caps"></div>
+        </div>
+
+        <div class="mb-5">
+          <p class="font-semibold mb-1" data-i18n="f_pricemax">Giá tối đa</p>
+          <p class="text-sm text-muted mb-2">≤ <span id="price-label" class="text-primary font-bold"></span></p>
+          <input type="range" id="f-price" class="w-full accent-[#3563E9]" />
+        </div>
+
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="f-fav" class="w-4 h-4 accent-[#3563E9]" />
+          <span class="font-semibold" data-i18n="f_favonly">Chỉ hiện xe yêu thích</span>
+        </label>
+      </aside>
+
+      <!-- Kết quả -->
+      <section>
+        <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3" id="cars-grid"></div>
+        <div id="empty-state" class="hidden text-center py-20">
+          <p class="text-5xl mb-3">🔍</p>
+          <p class="font-bold text-lg" data-i18n="empty_t">Không tìm thấy xe phù hợp</p>
+          <p class="text-muted mb-5" data-i18n="empty_p">Thử điều chỉnh lại bộ lọc của bạn.</p>
+          <button class="btn btn-outline" id="empty-reset" data-i18n="empty_reset">Xóa bộ lọc</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/catalog.js"></script>
+</body>
+</html>

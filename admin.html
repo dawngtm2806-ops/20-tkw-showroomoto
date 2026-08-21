@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title_admin">Morent — Quản trị cho thuê xe</title>
+  <meta name="description" content="Bảng điều khiển quản trị Morent: thống kê xe, lịch nhận xe, đơn thuê và giao dịch gần đây." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%233563E9'/%3E%3Cpath d='M4 14l1.5-4A2 2 0 017.4 9h9.2a2 2 0 011.9 1L20 14v3a1 1 0 01-1 1h-1v-1H6v1H5a1 1 0 01-1-1z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" /></noscript>
+  <link rel="stylesheet" href="dist/output.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <!-- SIDEBAR -->
+    <aside class="admin-side">
+      <a class="brand mb-4" href="index.html" style="padding:0 12px"><span class="brand__logo" id="ad-logo"></span>Morent</a>
+      <p class="admin-side__label" data-i18n="ad_menu">Menu chính</p>
+      <a class="admin-nav active" id="nav-dash"></a>
+      <a class="admin-nav" id="nav-cars" href="cars.html"></a>
+      <a class="admin-nav" id="nav-insight"></a>
+      <a class="admin-nav" id="nav-bookings" href="test-drive.html"></a>
+      <a class="admin-nav" id="nav-inbox" href="contact.html"></a>
+      <p class="admin-side__label" data-i18n="ad_options">Tuỳ chọn</p>
+      <a class="admin-nav" id="nav-settings"></a>
+      <a class="admin-nav" id="nav-help"></a>
+      <div class="admin-nav" style="cursor:default">
+        <span id="nav-theme-ic"></span><span class="flex-1" data-i18n="ad_dark">Chế độ tối</span>
+        <button class="swap-btn" id="ad-theme" type="button" aria-label="Dark mode" style="width:34px;height:22px"></button>
+      </div>
+      <a class="admin-nav admin-logout mt-4" href="index.html" id="nav-logout"></a>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <!-- Top bar -->
+      <header class="flex items-center justify-between gap-4 mb-6 flex-wrap">
+        <div><h1 class="section-title" data-i18n="ad_overview">Tổng quan</h1><p class="text-muted text-sm" data-i18n="ad_welcome">Xin chào, chào mừng trở lại 👋</p></div>
+        <div class="flex items-center gap-3 flex-1" style="max-width:520px;min-width:200px">
+          <div class="relative flex-1">
+            <input class="input input--fill" id="ad-search" placeholder="Tìm xe, đơn hàng…" data-i18n-ph="ad_search_ph" style="padding-left:40px" />
+            <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)">🔍</span>
+          </div>
+          <button class="icon-btn" aria-label="Favorites">❤</button>
+          <button class="icon-btn" aria-label="Notifications" style="position:relative">🔔<span class="fav-count show" style="background:var(--danger)">3</span></button>
+          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold" id="ad-avatar">A</div>
+        </div>
+      </header>
+
+      <!-- KPI -->
+      <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 mb-6" id="kpi-row"></div>
+
+      <!-- 2 cột -->
+      <div class="grid gap-6 xl:grid-cols-2 items-start">
+        <!-- Chi tiết đơn mới nhất -->
+        <section class="card p-6">
+          <div class="flex items-center justify-between mb-4"><h2 class="font-extrabold text-lg" data-i18n="ad_latest">Chi tiết đơn mới nhất</h2><span class="text-muted">•••</span></div>
+          <div id="detail-panel"></div>
+        </section>
+
+        <div class="grid gap-6">
+          <!-- Tỉ lệ loại xe được thuê (Chart.js) -->
+          <section class="card p-6">
+            <div class="flex items-center justify-between mb-4"><h2 class="font-extrabold text-lg" data-i18n="ad_top_seg">Top xe cho thuê theo phân khúc</h2><span class="text-muted">•••</span></div>
+            <div class="flex items-center gap-6 flex-wrap">
+              <div style="position:relative;width:210px;height:210px;flex:none">
+                <canvas id="chart-types"></canvas>
+                <div id="donut-center" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;text-align:center"></div>
+              </div>
+              <div class="flex-1 grid gap-3" id="donut-legend" style="min-width:170px"></div>
+            </div>
+          </section>
+          <!-- Giao dịch gần đây -->
+          <section class="card p-6">
+            <div class="flex items-center justify-between mb-2"><h2 class="font-extrabold text-lg" data-i18n="ad_recent">Giao dịch gần đây</h2><a class="nav-link" href="#" id="txn-viewall" data-i18n="ad_viewall">Xem tất cả</a></div>
+            <div id="txn-list"></div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Doanh thu theo ngày (Chart.js) -->
+      <section class="card p-6 mt-6">
+        <div class="flex items-center justify-between mb-4"><h2 class="font-extrabold text-lg" data-i18n="ad_revenue_day">Doanh thu theo ngày</h2><span class="text-muted">•••</span></div>
+        <div style="position:relative;height:260px"><canvas id="chart-revenue"></canvas></div>
+      </section>
+
+      <p class="text-muted text-xs mt-8">© <span id="ad-year"></span> <span data-i18n="ad_footer">Morent · Bảng điều khiển demo cho đồ án Thiết kế Web. Dữ liệu lấy từ API nội bộ (hoặc localStorage khi chạy tĩnh).</span></p>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

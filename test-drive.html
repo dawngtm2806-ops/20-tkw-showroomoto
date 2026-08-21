@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title_testdrive">Đặt lịch nhận xe | Morent cho thuê xe</title>
+  <meta name="description" content="Đặt lịch nhận xe thuê tại Morent. Chọn mẫu xe, chi nhánh và thời gian — đội ngũ sẽ liên hệ xác nhận ngay." />
+  <meta property="og:title" content="Đặt lịch nhận xe | Morent" />
+  <meta property="og:description" content="Đặt lịch nhận xe thuê — chọn xe, chi nhánh và thời gian." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%233563E9'/%3E%3Cpath d='M4 14l1.5-4A2 2 0 017.4 9h9.2a2 2 0 011.9 1L20 14v3a1 1 0 01-1 1h-1v-1H6v1H5a1 1 0 01-1-1z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" /></noscript>
+  <link rel="stylesheet" href="dist/output.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container-x py-8">
+    <nav aria-label="breadcrumb" class="text-sm text-muted mb-2"><a href="index.html" data-i18n="crumb_home">Trang chủ</a> / <span class="text-ink font-semibold" data-i18n="td_crumb">Đặt lịch nhận xe</span></nav>
+    <div class="mb-8">
+      <h1 class="section-title" data-i18n="td_title">Đặt lịch nhận xe thuê</h1>
+      <p class="section-sub mt-1" data-i18n="td_sub">Điền thông tin bên dưới, chúng tôi sẽ liên hệ xác nhận lịch hẹn trong vòng 24 giờ.</p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-[1fr_360px]">
+      <!-- Form -->
+      <form class="card p-6 sm:p-8" id="td-form" novalidate>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div class="field" data-field="name">
+            <label for="td-name"><span data-i18n="fld_name">Họ và tên</span> <span class="req">*</span></label>
+            <input class="input" id="td-name" name="name" type="text" placeholder="Nguyễn Văn A" data-i18n-ph="ph_name" autocomplete="name" />
+            <span class="field__error"></span>
+          </div>
+          <div class="field" data-field="phone">
+            <label for="td-phone"><span data-i18n="fld_phone">Số điện thoại</span> <span class="req">*</span></label>
+            <input class="input" id="td-phone" name="phone" type="tel" placeholder="0901 234 567" autocomplete="tel" inputmode="tel" />
+            <span class="field__error"></span>
+          </div>
+          <div class="field" data-field="email">
+            <label for="td-email">Email <span class="req">*</span></label>
+            <input class="input" id="td-email" name="email" type="email" placeholder="ban@email.com" autocomplete="email" />
+            <span class="field__error"></span>
+          </div>
+          <div class="field" data-field="car">
+            <label for="td-car"><span data-i18n="td_car">Dòng xe muốn thuê</span> <span class="req">*</span></label>
+            <select class="select" id="td-car" name="car"></select>
+            <span class="field__error"></span>
+          </div>
+          <div class="field" data-field="branch">
+            <label for="td-branch"><span data-i18n="td_branch">Chi nhánh</span> <span class="req">*</span></label>
+            <select class="select" id="td-branch" name="branch"></select>
+            <span class="field__error"></span>
+          </div>
+          <div class="field" data-field="date">
+            <label for="td-date"><span data-i18n="td_date">Ngày hẹn</span> <span class="req">*</span></label>
+            <input class="input" id="td-date" name="date" type="date" />
+            <span class="field__error"></span>
+          </div>
+          <div class="field" data-field="time">
+            <label for="td-time"><span data-i18n="td_time">Giờ hẹn</span> <span class="req">*</span></label>
+            <select class="select" id="td-time" name="time"></select>
+            <span class="field__error"></span>
+          </div>
+          <div class="field sm:col-span-2" data-field="note">
+            <label for="td-note" data-i18n="td_note">Ghi chú (không bắt buộc)</label>
+            <textarea class="textarea" id="td-note" name="note" placeholder="Yêu cầu thêm về màu xe, phiên bản, thời gian liên hệ..." data-i18n-ph="td_note_ph"></textarea>
+            <span class="field__error"></span>
+          </div>
+          <div class="field sm:col-span-2" data-field="agree">
+            <label class="flex items-start gap-3 cursor-pointer select-none" style="flex-direction:row">
+              <input type="checkbox" id="td-agree" name="agree" class="w-5 h-5 mt-0.5 accent-[#3563E9]" />
+              <span class="text-sm text-muted"><span data-i18n="td_agree_a">Tôi đồng ý cho Morent liên hệ tư vấn và đồng ý với</span> <a href="#" class="text-primary font-semibold" data-i18n="td_terms">điều khoản dịch vụ</a>.</span>
+            </label>
+            <span class="field__error"></span>
+          </div>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <button type="submit" class="btn btn-primary" data-i18n="td_submit">Gửi yêu cầu đặt xe</button>
+          <button type="reset" class="btn btn-ghost" id="td-reset" data-i18n="td_reset">Nhập lại</button>
+        </div>
+      </form>
+
+      <!-- Tóm tắt / xe đã chọn -->
+      <aside class="grid gap-6 h-max">
+        <div class="card p-6" id="td-preview"></div>
+        <div class="card p-6">
+          <h2 class="font-bold text-lg mb-4" data-i18n="td_prep_t">Cần chuẩn bị gì?</h2>
+          <ul class="grid gap-3 text-sm text-muted">
+            <li class="flex gap-2"><span class="text-primary">✓</span> <span data-i18n="td_prep1">CMND/CCCD và giấy phép lái xe còn hạn.</span></li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> <span data-i18n="td_prep2">Đến trước giờ hẹn 10 phút tại chi nhánh.</span></li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> <span data-i18n="td_prep3">Đặt xe nhanh, giữ chỗ miễn phí, không ràng buộc.</span></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/test-drive.js"></script>
+</body>
+</html>

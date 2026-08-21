@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title_home">Morent — Cho thuê xe ô tô | Trang chủ</title>
+  <meta name="description" content="Morent — dịch vụ cho thuê xe ô tô. Thuê xe theo ngày, nhận/trả xe tại nhiều chi nhánh, giá minh bạch và nhiều ưu đãi hấp dẫn." />
+  <meta name="keywords" content="cho thuê xe ô tô, thuê xe tự lái, thuê xe theo ngày, Koenigsegg, Nissan GT-R, CR-V" />
+  <meta property="og:title" content="Morent — Cho thuê xe ô tô" />
+  <meta property="og:description" content="Thuê xe theo ngày an toàn, minh bạch — nhận/trả xe tại mọi chi nhánh Morent." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%233563E9'/%3E%3Cpath d='M4 14l1.5-4A2 2 0 017.4 9h9.2a2 2 0 011.9 1L20 14v3a1 1 0 01-1 1h-1v-1H6v1H5a1 1 0 01-1-1z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" /></noscript>
+  <link rel="stylesheet" href="dist/output.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <h1 class="sr-only" data-i18n="hero_h1">Morent — Cho thuê xe ô tô theo ngày, nhận/trả tận nơi</h1>
+    <!-- HERO: 2 banner promo (bám Morent) -->
+    <section class="container-x pt-8">
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="promo reveal">
+          <span class="promo__deco"></span><span class="promo__deco2"></span>
+          <div>
+            <h2 data-i18n="hp_promo1_t">Nền tảng thuê xe ô tô hàng đầu Việt Nam</h2>
+            <p data-i18n="hp_promo1_p">Sở hữu chiếc xe mơ ước một cách an toàn, minh bạch — lái thử miễn phí tại mọi chi nhánh.</p>
+          </div>
+          <div class="flex items-end justify-between gap-4">
+            <a class="btn" style="background:#fff;color:#3563E9" href="cars.html" data-i18n="hp_promo1_btn">Khám phá xe</a>
+            <div class="promo-car" style="width:250px"><img src="assets/img/cars/sport.png" alt="Koenigsegg" class="car-photo" loading="lazy" style="filter:drop-shadow(0 10px 14px rgba(0,0,0,.28))" /></div>
+          </div>
+        </article>
+        <article class="promo promo--dark reveal">
+          <span class="promo__deco"></span><span class="promo__deco2"></span>
+          <div>
+            <h2 data-i18n="hp_promo2_t">Sở hữu xe dễ dàng với ưu đãi tốt nhất</h2>
+            <p data-i18n="hp_promo2_p">Trả góp linh hoạt, lãi suất 0% và quà tặng hấp dẫn mỗi tháng.</p>
+          </div>
+          <div class="flex items-end justify-between gap-4">
+            <a class="btn" style="background:#fff;color:#3563E9" href="news.html" data-i18n="hp_promo2_btn">Xem ưu đãi</a>
+            <div class="promo-car" style="width:250px"><img src="assets/img/cars/sedan.png" alt="Nissan GT-R" class="car-photo" loading="lazy" style="filter:drop-shadow(0 10px 14px rgba(0,0,0,.28))" /></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BOOKING BAR: Nhận/Trả xe (nút swap kiểu Morent) -->
+    <section class="container-x mt-8">
+      <div class="relative grid gap-3 md:gap-0 md:grid-cols-[1fr_auto_1fr] items-stretch">
+        <div class="booking">
+          <div class="booking__side">
+            <div class="booking__label"><span class="booking__dot"></span> <span data-i18n="bk_pickup">Nhận xe lái thử tại</span></div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3">
+              <select class="select" id="bk-branch-a" aria-label="Chi nhánh nhận xe"></select>
+              <input class="input" type="date" id="bk-date-a" aria-label="Ngày nhận xe" />
+              <select class="select" id="bk-time-a" aria-label="Giờ nhận xe"></select>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center py-1">
+          <button class="swap-btn" id="bk-swap" type="button" aria-label="Đổi chi nhánh" title="Đổi chi nhánh">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v13M7 4L4 7M7 4l3 3M17 20V7M17 20l-3-3M17 20l3-3"/></svg>
+          </button>
+        </div>
+        <div class="booking">
+          <div class="booking__side">
+            <div class="booking__label"><span class="booking__dot" style="border-color:var(--accent)"></span> <span data-i18n="bk_return">Trả xe tại</span></div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3">
+              <select class="select" id="bk-branch-b" aria-label="Chi nhánh trả xe"></select>
+              <input class="input" type="date" id="bk-date-b" aria-label="Ngày trả xe" />
+              <select class="select" id="bk-time-b" aria-label="Giờ trả xe"></select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 flex flex-wrap items-center justify-center md:justify-between gap-3">
+        <p class="text-sm text-muted" id="bk-estimate" aria-live="polite"></p>
+        <button class="btn btn-primary" id="bk-submit" type="button" data-i18n="bk_submit">Đặt lịch lái thử ngay</button>
+      </div>
+    </section>
+
+    <!-- XE PHỔ BIẾN -->
+    <section class="container-x mt-16">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <p class="eyebrow mb-1" data-i18n="hp_eyebrow_hot">Bán chạy</p>
+          <h2 class="section-title" data-i18n="hp_popular">Xe phổ biến</h2>
+        </div>
+        <a class="nav-link flex items-center gap-1" href="cars.html"><span data-i18n="hp_seeall">Xem tất cả</span> <span id="pop-count" class="text-muted"></span></a>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" id="popular-cars"></div>
+    </section>
+
+    <!-- XE ĐỀ XUẤT -->
+    <section class="container-x mt-16">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <p class="eyebrow mb-1" data-i18n="hp_eyebrow_foryou">Dành cho bạn</p>
+          <h2 class="section-title" data-i18n="hp_recommend">Xe đề xuất</h2>
+        </div>
+        <a class="nav-link" href="cars.html" data-i18n="hp_seeall">Xem tất cả</a>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" id="recommend-cars"></div>
+      <div class="flex justify-center mt-10">
+        <a class="btn btn-primary" href="cars.html"><span data-i18n="hp_more">Xem thêm xe</span> <span id="total-count"></span></a>
+      </div>
+    </section>
+
+    <!-- VÌ SAO CHỌN MORENT -->
+    <section class="container-x mt-20">
+      <div class="text-center mb-10">
+        <p class="eyebrow mb-2" data-i18n="hp_why_eyebrow">Vì sao chọn chúng tôi</p>
+        <h2 class="section-title" data-i18n="hp_why_title">Trải nghiệm thuê xe khác biệt</h2>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="card p-6 reveal hover-lift">
+          <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z" fill="currentColor" stroke="none"/></svg></div>
+          <h3 class="font-bold text-lg mb-2" data-i18n="feat1_t">Xe đời mới, chính hãng</h3>
+          <p class="text-muted text-sm" data-i18n="feat1_p">Đội xe đời mới, chính hãng, được bảo dưỡng định kỳ và vệ sinh sạch sẽ trước mỗi chuyến.</p>
+        </div>
+        <div class="card p-6 reveal hover-lift">
+          <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h3 class="font-bold text-lg mb-2" data-i18n="feat2_t">Thủ tục thuê nhanh gọn</h3>
+          <p class="text-muted text-sm" data-i18n="feat2_p">Đặt xe online trong vài bước, nhận xe tại chi nhánh gần bạn hoặc giao tận nơi.</p>
+        </div>
+        <div class="card p-6 reveal hover-lift">
+          <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <h3 class="font-bold text-lg mb-2" data-i18n="feat3_t">Giá thuê minh bạch</h3>
+          <p class="text-muted text-sm" data-i18n="feat3_p">Giá thuê niêm yết rõ ràng theo ngày, không phí ẩn, nhiều ưu đãi cho thuê dài ngày.</p>
+        </div>
+        <div class="card p-6 reveal hover-lift">
+          <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0z"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3 class="font-bold text-lg mb-2" data-i18n="feat4_t">Hỗ trợ 24/7</h3>
+          <p class="text-muted text-sm" data-i18n="feat4_p">Đội ngũ tư vấn và cứu hộ 24/7 luôn sẵn sàng đồng hành cùng bạn trên mọi hành trình.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HÃNG XE -->
+    <section class="container-x mt-20">
+      <p class="text-center text-muted font-semibold mb-6" data-i18n="hp_brands">Đối tác thương hiệu chính hãng</p>
+      <div class="flex flex-wrap items-center justify-center gap-3" id="brand-strip"></div>
+    </section>
+
+    <!-- CTA -->
+    <section class="container-x mt-20">
+      <div class="promo promo--dark reveal" style="min-height:auto">
+        <span class="promo__deco"></span>
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 w-full">
+          <div>
+            <h2 style="max-width:22ch" data-i18n="hp_cta_t">Sẵn sàng cầm lái chiếc xe mơ ước?</h2>
+            <p style="max-width:40ch" data-i18n="hp_cta_p">Đăng ký lái thử ngay hôm nay và nhận ưu đãi đặc biệt dành riêng cho bạn.</p>
+          </div>
+          <a class="btn" style="background:#fff;color:#3563E9" href="test-drive.html" data-i18n="cta_testdrive">Đăng ký lái thử</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

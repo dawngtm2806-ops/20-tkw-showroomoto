@@ -1,0 +1,74 @@
+[
+  {
+    "id": "n1",
+    "title": "Khai trương chi nhánh cho thuê xe Morent Quận 7",
+    "titleEn": "Morent opens a new car-rental branch in District 7",
+    "cat": "Sự kiện",
+    "date": "05/07/2026",
+    "color": "#3563E9",
+    "excerpt": "Điểm nhận và trả xe hiện đại với hơn 40 mẫu xe cho thuê, khu vực kiểm tra xe và quầy hỗ trợ khách hàng.",
+    "excerptEn": "A modern pick-up and drop-off point with 40+ rental cars, a vehicle check area and a customer support desk.",
+    "img": "assets/img/cars/sedan.png",
+    "banner": "assets/img/dealer/car3.jpg"
+  },
+  {
+    "id": "n2",
+    "title": "Ưu đãi mùa hè: giảm đến 20% khi thuê xe dài ngày",
+    "titleEn": "Summer deal: up to 20% off on long-term rentals",
+    "cat": "Khuyến mãi",
+    "date": "02/07/2026",
+    "color": "#ED3F3F",
+    "excerpt": "Áp dụng cho nhiều dòng SUV và sedan, kèm miễn phí giao xe tận nơi cho đơn thuê từ 5 ngày.",
+    "excerptEn": "Applies to many SUV and sedan models, with free doorstep delivery on rentals of 5 days or more.",
+    "img": "assets/img/cars/suv-brown.png",
+    "banner": "assets/img/dealer/car2.jpg"
+  },
+  {
+    "id": "n3",
+    "title": "Trên ghế lái mẫu SUV điện: có đáng để thuê?",
+    "titleEn": "Behind the wheel of an electric SUV: is it worth renting?",
+    "cat": "Đánh giá xe",
+    "date": "28/06/2026",
+    "color": "#54A6FF",
+    "excerpt": "Cảm nhận vận hành, quãng đường thực tế mỗi lần sạc và các tính năng thông minh trên một mẫu SUV điện.",
+    "excerptEn": "Driving impressions, real-world range per charge and the smart features on an electric SUV.",
+    "img": "assets/img/cars/suv-white.png",
+    "banner": "assets/img/dealer/car5.jpg"
+  },
+  {
+    "id": "n4",
+    "title": "Kinh nghiệm chọn xe 7 chỗ cho chuyến đi gia đình",
+    "titleEn": "How to pick a 7-seater for a family trip",
+    "cat": "Cẩm nang",
+    "date": "20/06/2026",
+    "color": "#1A202C",
+    "excerpt": "So sánh các lựa chọn MPV và SUV 7 chỗ đáng chú ý về không gian, chi phí thuê và sự thoải mái.",
+    "excerptEn": "Comparing notable 7-seat MPV and SUV options on space, rental cost and comfort.",
+    "img": "assets/img/cars/suv-blue.png",
+    "banner": "assets/img/dealer/car8.jpg"
+  },
+  {
+    "id": "n5",
+    "title": "Lái xe mùa mưa: 6 điều cần lưu ý trước mỗi chuyến",
+    "titleEn": "Rainy-season driving: 6 things to check before every trip",
+    "cat": "Cẩm nang",
+    "date": "15/06/2026",
+    "color": "#3563E9",
+    "excerpt": "Từ lốp, phanh đến gạt mưa và điều hòa — danh sách kiểm tra giúp bạn lái an toàn suốt mùa mưa.",
+    "excerptEn": "From tyres and brakes to wipers and A/C — a checklist to help you drive safely through the rainy season.",
+    "img": "assets/img/cars/lux.png",
+    "banner": "assets/img/dealer/car1.jpg"
+  },
+  {
+    "id": "n6",
+    "title": "Xu hướng thuê xe điện ngày càng phổ biến",
+    "titleEn": "Renting electric cars is becoming more popular",
+    "cat": "Thị trường",
+    "date": "10/06/2026",
+    "color": "#54A6FF",
+    "excerpt": "Hạ tầng trạm sạc mở rộng và nhiều mẫu xe mới khiến việc thuê xe điện ngày càng thuận tiện.",
+    "excerptEn": "Expanding charging infrastructure and many new models make renting an electric car more convenient.",
+    "img": "assets/img/cars/mg-blue.png",
+    "banner": "assets/img/dealer/car6.jpg"
+  }
+]

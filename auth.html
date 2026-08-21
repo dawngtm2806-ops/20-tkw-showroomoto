@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title_auth">Morent — Đăng nhập / Đăng ký tài khoản</title>
+  <meta name="description" content="Đăng nhập hoặc tạo tài khoản Morent để lưu xe yêu thích, quản lý lịch nhận xe và nhận ưu đãi riêng." />
+  <meta name="robots" content="noindex" />
+  <meta property="og:title" content="Morent — Tài khoản" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%233563E9'/%3E%3Cpath d='M4 14l1.5-4A2 2 0 017.4 9h9.2a2 2 0 011.9 1L20 14v3a1 1 0 01-1 1h-1v-1H6v1H5a1 1 0 01-1-1z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" /></noscript>
+  <link rel="stylesheet" href="dist/output.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <nav class="container-x pt-6" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-sm text-muted">
+        <li><a href="index.html" class="hover:text-primary" data-i18n="crumb_home">Trang chủ</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-ink font-semibold" id="crumb-current" data-i18n="nav_login">Đăng nhập</li>
+      </ol>
+    </nav>
+
+    <section class="container-x py-10">
+      <div class="grid gap-10 lg:grid-cols-2 items-center" style="max-width:1040px;margin:0 auto">
+        <!-- Cột giới thiệu -->
+        <div class="hidden lg:block">
+          <p class="eyebrow mb-2" data-i18n="au_eyebrow">Tài khoản Morent</p>
+          <h1 class="section-title mb-4" style="max-width:16ch" data-i18n="au_h1">Trải nghiệm thuê xe cá nhân hoá</h1>
+          <p class="text-muted mb-8" style="max-width:44ch" data-i18n="au_intro">Đăng nhập để lưu xe yêu thích trên mọi thiết bị, quản lý lịch nhận xe và nhận ưu đãi dành riêng cho bạn.</p>
+          <ul class="grid gap-4">
+            <li class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg bg-primary text-white flex items-center justify-center">❤</span><span class="font-semibold" data-i18n="au_b1">Đồng bộ danh sách xe yêu thích</span></li>
+            <li class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg bg-primary text-white flex items-center justify-center">📅</span><span class="font-semibold" data-i18n="au_b2">Theo dõi lịch nhận xe</span></li>
+            <li class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg bg-primary text-white flex items-center justify-center">★</span><span class="font-semibold" data-i18n="au_b3">Ưu đãi & tin tức sớm nhất</span></li>
+          </ul>
+        </div>
+
+        <!-- Cột form -->
+        <div class="card p-6 sm:p-8" style="max-width:440px;width:100%;margin:0 auto">
+          <div class="flex gap-6 border-b mb-6" style="border-color:var(--line)">
+            <button class="tab-btn active" id="tab-login" type="button" data-i18n="nav_login">Đăng nhập</button>
+            <button class="tab-btn" id="tab-register" type="button" data-i18n="au_register">Đăng ký</button>
+          </div>
+
+          <!-- FORM ĐĂNG NHẬP -->
+          <form id="login-form" class="grid gap-4" novalidate>
+            <div class="field" data-field="l-email">
+              <label for="l-email"><span data-i18n="lbl_email">Email</span> <span class="req">*</span></label>
+              <input class="input" type="email" id="l-email" autocomplete="email" placeholder="ban@email.com" />
+              <span class="field__error"></span>
+            </div>
+            <div class="field" data-field="l-password">
+              <label for="l-password"><span data-i18n="au_password">Mật khẩu</span> <span class="req">*</span></label>
+              <input class="input" type="password" id="l-password" autocomplete="current-password" placeholder="Nhập mật khẩu" data-i18n-ph="au_password_ph" />
+              <span class="field__error"></span>
+            </div>
+            <button class="btn btn-primary btn-block mt-1" type="submit" data-i18n="nav_login">Đăng nhập</button>
+            <p class="text-muted text-sm text-center"><span data-i18n="au_no_acc">Chưa có tài khoản?</span> <button type="button" class="text-primary font-semibold" id="link-to-register" data-i18n="au_register_now">Đăng ký ngay</button></p>
+          </form>
+
+          <!-- FORM ĐĂNG KÝ -->
+          <form id="register-form" class="grid gap-4 hidden" novalidate>
+            <div class="field" data-field="r-name">
+              <label for="r-name"><span data-i18n="fld_name">Họ và tên</span> <span class="req">*</span></label>
+              <input class="input" type="text" id="r-name" autocomplete="name" placeholder="Nguyễn Văn A" data-i18n-ph="ph_name" />
+              <span class="field__error"></span>
+            </div>
+            <div class="field" data-field="r-email">
+              <label for="r-email"><span data-i18n="lbl_email">Email</span> <span class="req">*</span></label>
+              <input class="input" type="email" id="r-email" autocomplete="email" placeholder="ban@email.com" />
+              <span class="field__error"></span>
+            </div>
+            <div class="field" data-field="r-password">
+              <label for="r-password"><span data-i18n="au_password">Mật khẩu</span> <span class="req">*</span></label>
+              <input class="input" type="password" id="r-password" autocomplete="new-password" placeholder="Tối thiểu 6 ký tự" data-i18n-ph="au_pw6_ph" />
+              <span class="field__error"></span>
+            </div>
+            <div class="field" data-field="r-confirm">
+              <label for="r-confirm"><span data-i18n="au_confirm">Nhập lại mật khẩu</span> <span class="req">*</span></label>
+              <input class="input" type="password" id="r-confirm" autocomplete="new-password" placeholder="Nhập lại mật khẩu" data-i18n-ph="au_confirm_ph" />
+              <span class="field__error"></span>
+            </div>
+            <label class="flex items-start gap-2 text-sm text-muted cursor-pointer">
+              <input type="checkbox" id="r-agree" class="mt-1" />
+              <span><span data-i18n="au_agree_a">Tôi đồng ý với</span> <a href="#" class="text-primary" data-i18n="au_terms">Điều khoản</a> <span data-i18n="au_and">và</span> <a href="#" class="text-primary" data-i18n="au_privacy">Chính sách bảo mật</a> <span data-i18n="au_of">của Morent.</span></span>
+            </label>
+            <div class="field" data-field="r-agree" style="gap:0"><span class="field__error"></span></div>
+            <button class="btn btn-primary btn-block" type="submit" data-i18n="au_create">Tạo tài khoản</button>
+            <p class="text-muted text-sm text-center"><span data-i18n="au_have_acc">Đã có tài khoản?</span> <button type="button" class="text-primary font-semibold" id="link-to-login" data-i18n="nav_login">Đăng nhập</button></p>
+          </form>
+
+          <p class="text-muted text-center mt-6" style="font-size:12px;line-height:1.6" data-i18n="au_demo_note">🔒 Tài khoản demo phục vụ đồ án. Khi có server API (<code>npm start</code>) dữ liệu lưu ở backend; nếu không, lưu tạm trên trình duyệt.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

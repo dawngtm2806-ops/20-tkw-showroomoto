@@ -1,0 +1,339 @@
+/* =============================================================
+   input.css — NGUỒN CSS (Tailwind + component/theme tự viết)
+   Build ra dist/output.css bằng:  npm run build   (hoặc npm run dev để watch)
+   ============================================================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================================
+   styles.css — Style bổ sung + component + theme (Cho thuê xe ô tô)
+   Dùng chung với Tailwind Play CDN. Bám design tokens Morent.
+   ============================================================= */
+
+:root {
+  --primary: #3563E9;
+  --primary-dark: #2647c9;
+  --accent: #54A6FF;
+  --ink: #1A202C;
+  --muted: #90A3BF;
+  --line: #E7EEF6;
+  --line-strong: #C3D4E9;
+  --bg: #F6F7F9;
+  --card: #FFFFFF;
+  --danger: #ED3F3F;
+  --shadow: 0 20px 40px -18px rgba(53, 99, 233, .25);
+  --shadow-sm: 0 8px 24px -14px rgba(19, 42, 92, .30);
+}
+
+[data-theme="dark"] {
+  --ink: #E8EDF6;
+  --muted: #8996b0;
+  --line: #26324a;
+  --line-strong: #33415f;
+  --bg: #0f1626;
+  --card: #18213a;
+  --shadow: 0 20px 40px -18px rgba(0, 0, 0, .55);
+  --shadow-sm: 0 8px 24px -14px rgba(0, 0, 0, .5);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  transition: background .3s ease, color .3s ease;
+}
+
+a { color: inherit; text-decoration: none; }
+img, svg { max-width: 100%; }
+
+.container-x { width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; }
+
+.text-muted { color: var(--muted); }
+.text-primary { color: var(--primary); }
+.bg-primary { background: var(--primary); }
+.surface { background: var(--card); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-weight: 600; font-size: 15px; line-height: 1; cursor: pointer;
+  padding: 13px 20px; border-radius: 10px; border: 1px solid transparent;
+  transition: transform .15s ease, background .2s ease, box-shadow .2s ease, color .2s;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px) scale(.99); }
+.btn-primary { background: var(--primary); color: #fff; box-shadow: var(--shadow-sm); }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-outline { background: transparent; color: var(--primary); border-color: var(--line-strong); }
+.btn-outline:hover { background: rgba(53, 99, 233, .08); }
+.btn-ghost { background: var(--card); color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--line-strong); }
+.btn-block { width: 100%; }
+.btn-sm { padding: 9px 14px; font-size: 13px; border-radius: 8px; }
+
+/* ---------- Card & car card (bám Morent) ---------- */
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+
+.car-card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 10px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s;
+  position: relative;
+}
+.car-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: transparent; }
+.car-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.car-card__name { font-size: 18px; font-weight: 700; color: var(--ink); }
+.car-card__type { font-size: 13px; color: var(--muted); font-weight: 600; }
+.car-illustration { display: block; width: 100%; height: auto; margin: 6px 0 2px; }
+.car-card__image { height: 132px; display: flex; align-items: flex-end; justify-content: center; }
+
+.fav-btn {
+  border: 0; background: transparent; cursor: pointer; color: var(--muted);
+  width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;
+  transition: transform .15s, color .2s;
+}
+.fav-btn:hover { transform: scale(1.15); }
+.fav-btn.is-active { color: var(--danger); }
+.fav-btn.is-active svg { fill: var(--danger); stroke: var(--danger); }
+
+.spec-row { display: flex; align-items: center; color: var(--muted); font-size: 13px; font-weight: 500; margin-top: 2px; }
+.spec-row span { display: inline-flex; align-items: center; gap: 6px; flex: 1; min-width: 0; }
+.spec-row span:nth-child(2) { justify-content: center; }
+.spec-row span:nth-child(3) { justify-content: flex-end; }
+.spec-row svg { width: 16px; height: 16px; opacity: .9; }
+
+.price-row { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 6px; }
+.price-now { font-size: 18px; font-weight: 800; color: var(--ink); }
+.price-now small { font-size: 12px; font-weight: 600; color: var(--muted); }
+.price-old { font-size: 12px; color: var(--muted); text-decoration: line-through; }
+
+/* ---------- Badges / chips ---------- */
+.badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; }
+.badge-primary { background: rgba(53, 99, 233, .12); color: var(--primary); }
+.badge-red { background: rgba(237, 63, 63, .12); color: var(--danger); }
+.badge-ok { background: rgba(34, 168, 108, .14); color: #1f9d63; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--card); color: var(--ink);
+  font-size: 13px; font-weight: 600; cursor: pointer; transition: all .18s;
+}
+.chip:hover { border-color: var(--primary); }
+.chip.is-active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* ---------- Section heading ---------- */
+.section-title { font-size: 26px; font-weight: 800; color: var(--ink); letter-spacing: -.02em; }
+.section-sub { color: var(--muted); font-size: 15px; }
+.eyebrow { color: var(--muted); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+
+/* ---------- Hero promo (banner xanh Morent) ---------- */
+.promo {
+  border-radius: 14px; padding: 28px; color: #fff; position: relative; overflow: hidden;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;
+}
+.promo--dark { background: linear-gradient(135deg, #3563E9, #1a2f7a); }
+.promo__deco { position: absolute; right: -30px; bottom: -30px; width: 220px; height: 220px; border-radius: 50%; background: rgba(255, 255, 255, .10); }
+.promo__deco2 { position: absolute; right: 40px; top: -60px; width: 160px; height: 160px; border-radius: 50%; background: rgba(255, 255, 255, .08); }
+.promo h2 { font-size: 26px; font-weight: 800; margin: 0 0 8px; max-width: 15ch; position: relative; }
+.promo p { opacity: .9; margin: 0; max-width: 24ch; position: relative; }
+
+/* ---------- Booking bar (Pick-Up / Drop-Off) ---------- */
+.booking { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow-sm); }
+.booking__side { padding: 20px; }
+.booking__label { font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+.booking__dot { width: 14px; height: 14px; border-radius: 50%; border: 4px solid var(--primary); }
+.swap-btn {
+  width: 56px; height: 56px; border-radius: 10px; background: var(--primary); color: #fff; border: 4px solid var(--card);
+  display: inline-flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-sm);
+  transition: transform .3s;
+}
+.swap-btn:hover { transform: rotate(180deg); }
+
+/* ---------- Forms ---------- */
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field > label { font-weight: 600; font-size: 14px; color: var(--ink); }
+.field .req { color: var(--danger); }
+.input, .select, .textarea {
+  width: 100%; background: var(--bg); border: 1px solid var(--line-strong); color: var(--ink);
+  border-radius: 10px; padding: 12px 14px; font: inherit; font-size: 15px; transition: border-color .2s, box-shadow .2s;
+}
+.input:focus, .select:focus, .textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(53, 99, 233, .12); }
+.textarea { min-height: 120px; resize: vertical; }
+.field.has-error .input, .field.has-error .select, .field.has-error .textarea { border-color: var(--danger); box-shadow: 0 0 0 4px rgba(237, 63, 63, .10); }
+.field__error { color: var(--danger); font-size: 13px; min-height: 16px; display: none; }
+.field.has-error .field__error { display: block; }
+
+/* ---------- Header / Nav ---------- */
+.site-header { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--card) 88%, transparent); backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: var(--ink); }
+.brand__logo { width: 34px; height: 34px; border-radius: 9px; background: var(--primary); display: inline-flex; align-items: center; justify-content: center; color: #fff; }
+.nav-link { color: var(--muted); font-weight: 600; font-size: 15px; padding: 8px 2px; position: relative; transition: color .2s; }
+.nav-link:hover { color: var(--ink); }
+.nav-link.active { color: var(--primary); }
+
+/* Thanh tìm kiếm trên header (kiểu Morent) */
+.header-search { position: relative; display: flex; align-items: center; gap: 8px; flex: 1; max-width: 460px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; }
+.header-suggest { position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 16px 32px rgba(15, 23, 42, .14); padding: 6px; z-index: 60; max-height: 340px; overflow: auto; }
+.header-suggest__item { display: flex; flex-direction: column; gap: 1px; padding: 9px 12px; border-radius: 8px; text-decoration: none; }
+.header-suggest__item:hover { background: var(--bg); }
+.header-suggest__name { font-weight: 700; font-size: 14px; color: var(--ink); }
+.header-suggest__meta { font-size: 12px; color: var(--muted); }
+.header-search:focus-within { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(53,99,233,.10); }
+.header-search__ic { color: var(--muted); display: inline-flex; flex: none; }
+.header-search input { flex: 1; min-width: 0; border: 0; background: transparent; outline: none; font: inherit; font-size: 14px; color: var(--ink); }
+.header-search input::placeholder { color: var(--muted); }
+.header-search__filter { border: 0; background: none; color: var(--muted); cursor: pointer; display: inline-flex; padding: 2px; flex: none; }
+.header-search__filter:hover { color: var(--primary); }
+.header-nav-row { border-top: 1px solid var(--line); background: color-mix(in srgb, var(--card) 88%, transparent); }
+@media (max-width: 767px) { .header-search { display: none; } }
+.nav-link.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 3px; border-radius: 3px; background: var(--primary); }
+.icon-btn { width: 42px; height: 42px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--ink); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: border-color .2s, transform .15s; position: relative; }
+.icon-btn:hover { border-color: var(--line-strong); }
+.fav-count { position: absolute; top: -6px; right: -6px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 999px; background: var(--danger); color: #fff; font-size: 11px; font-weight: 700; display: none; align-items: center; justify-content: center; }
+.fav-count.show { display: inline-flex; }
+
+/* mobile menu */
+.mobile-menu { display: none; }
+.mobile-menu.open { display: block; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--card); border-top: 1px solid var(--line); color: var(--muted); }
+.site-footer a:hover { color: var(--primary); }
+.footer-title { color: var(--ink); font-weight: 700; margin-bottom: 14px; }
+
+/* ---------- Tabs ---------- */
+.tab-btn { padding: 10px 4px; font-weight: 700; color: var(--muted); border-bottom: 3px solid transparent; cursor: pointer; background: none; border-top: 0; border-left: 0; border-right: 0; font-size: 15px; }
+.tab-btn.active { color: var(--primary); border-color: var(--primary); }
+
+/* ---------- Star rating ---------- */
+.stars { color: #FBAD39; display: inline-flex; gap: 2px; }
+.stars .off { color: var(--line-strong); }
+
+/* ---------- Toast ---------- */
+.toast-wrap { position: fixed; right: 20px; bottom: 20px; z-index: 100; display: flex; flex-direction: column; gap: 10px; }
+.toast { background: var(--ink); color: #fff; padding: 13px 18px; border-radius: 10px; box-shadow: var(--shadow); font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 10px; transform: translateY(10px); opacity: 0; animation: toastIn .3s forwards; }
+.toast.ok { background: #16794c; }
+.toast.err { background: var(--danger); }
+@keyframes toastIn { to { transform: translateY(0); opacity: 1; } }
+
+/* ---------- Scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Chi tiết xe: cột thông tin cao bằng gallery để đẩy giá/nút xuống đáy ---------- */
+#detail-info { display: flex; flex-direction: column; height: 100%; }
+
+/* ---------- Chi tiết xe: khung ảnh cố định + ảnh vừa khít (nhỏ hơn 2 mũi tên) ---------- */
+#detail-main { height: 380px; display: flex; align-items: center; justify-content: center; padding: 0 64px; overflow: hidden; }
+#detail-main .gallery-car { max-width: 100%; max-height: 320px; width: auto; height: auto; object-fit: contain; filter: drop-shadow(0 18px 14px rgba(15, 23, 42, .20)); }
+#detail-main .gallery-photo { max-width: 100%; max-height: 340px; width: auto; height: auto; object-fit: contain; border-radius: 14px; }
+
+/* ---------- Logo đối tác thương hiệu (ảnh thật, khung tròn, có chuyển động) ---------- */
+.brand-logo { width: 84px; height: 84px; border-radius: 50%; background: #fff; border: 1px solid var(--line); display: inline-flex; align-items: center; justify-content: center; padding: 16px; filter: grayscale(1); opacity: .7; cursor: default; overflow: hidden; transition: filter .3s ease, opacity .3s ease, transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+.brand-logo__img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; animation: brandFloat 3.6s ease-in-out infinite; }
+.brand-logo:hover { filter: grayscale(0); opacity: 1; transform: translateY(-5px) scale(1.06); box-shadow: 0 14px 26px rgba(15, 23, 42, .15); border-color: #d9e1ee; }
+@keyframes brandFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@media (prefers-reduced-motion: reduce) { .brand-logo__img { animation: none; } }
+
+/* ---------- Phân trang đánh giá ---------- */
+.rv-pg { min-width: 38px; height: 38px; padding: 0 10px; border: 1px solid var(--line); background: var(--card); border-radius: 9px; font-weight: 700; color: var(--ink); cursor: pointer; transition: background .2s, border-color .2s, color .2s; }
+.rv-pg:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.rv-pg.is-active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.rv-pg:disabled { opacity: .45; cursor: not-allowed; }
+
+/* ---------- Gallery thumbs ---------- */
+.thumb { border: 2px solid var(--line); border-radius: 10px; padding: 6px; cursor: pointer; background: var(--card); transition: border-color .2s; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.thumb.active { border-color: var(--primary); }
+.thumb .car-photo { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; filter: none; }
+.thumb .gallery-photo { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+
+/* ---------- Utilities ---------- */
+.hover-lift { transition: transform .2s, box-shadow .2s; }
+.hover-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.divider { height: 1px; background: var(--line); border: 0; }
+.skeleton { background: linear-gradient(90deg, var(--line) 25%, var(--bg) 50%, var(--line) 75%); background-size: 200% 100%; animation: sk 1.3s infinite; border-radius: 8px; }
+@keyframes sk { to { background-position: -200% 0; } }
+
+/* ---------- Nút đổi ngôn ngữ VI/EN ---------- */
+.lang-btn { display: inline-flex; align-items: center; gap: 4px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--muted); font-weight: 700; font-size: 13px; cursor: pointer; }
+.lang-btn:hover { border-color: var(--line-strong); }
+.lang-btn .on { color: var(--primary); }
+.lang-btn .lang-sep { opacity: .4; font-weight: 400; }
+
+/* ---------- Ảnh xe thật ---------- */
+.car-photo { width: 100%; height: 100%; object-fit: contain; display: block; filter: drop-shadow(0 16px 11px rgba(15, 23, 42, .22)); }
+.car-card__image { position: relative; }
+/* Bóng mờ hình elip dưới xe (giống Figma Morent) */
+.car-card__image::after { content: ""; position: absolute; left: 50%; bottom: 6px; transform: translateX(-50%); width: 74%; height: 15px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(15, 23, 42, .30), rgba(15, 23, 42, 0) 72%); filter: blur(3px); z-index: 0; pointer-events: none; }
+.car-card__image .car-photo { height: calc(108px * var(--csc, 1)); width: auto; max-width: 100%; object-fit: contain; position: relative; z-index: 1; filter: none; transform: var(--ctf, none); transform-origin: bottom center; }
+.summary-car .car-photo, .txn-thumb .car-photo { filter: drop-shadow(0 8px 9px rgba(0, 0, 0, .22)); }
+/* Xe trong 2 banner hero: cao cố định cho đồng đều */
+.promo-car { height: 132px; display: flex; align-items: center; justify-content: center; }
+.promo-car .car-photo { height: 100%; width: auto; max-width: 100%; object-fit: contain; }
+
+/* ---------- Chọn sao khi viết đánh giá ---------- */
+.rv-stars { display: inline-flex; gap: 4px; }
+.rv-star { background: none; border: 0; cursor: pointer; color: var(--line-strong); padding: 2px; line-height: 0; transition: color .12s, transform .12s; }
+.rv-star:hover { transform: scale(1.15); }
+.rv-star.on { color: #f6c343; }
+
+/* ---------- Avatar nút tài khoản trên header ---------- */
+.avatar-btn { width: 40px; height: 40px; border-radius: 999px; background: var(--primary); color: #fff; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; flex: none; transition: transform .15s, box-shadow .15s; }
+.avatar-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+
+/* ---------- Payment / Checkout (khớp Figma Morent) ---------- */
+.step-badge { font-size: 13px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+.input--fill { background: var(--bg); border-color: transparent; }
+.input--fill:focus { background: var(--card); border-color: var(--primary); }
+.radio-dot { width: 20px; height: 20px; border-radius: 999px; border: 6px solid var(--primary); background: var(--card); display: inline-block; flex: none; }
+.radio-dot--accent { border-color: var(--accent); }
+.pay-method { align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; cursor: pointer; transition: border-color .2s, box-shadow .2s; }
+.pay-method--active { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(53, 99, 233, .10); }
+.pay-radio { width: 18px; height: 18px; accent-color: var(--primary); }
+.pay-logo { font-weight: 800; font-size: 13px; color: var(--muted); letter-spacing: .02em; }
+.pay-logo--visa { color: #1a1f71; }
+.pay-logo--mc { color: #eb001b; }
+.pay-logo--paypal { color: #003087; }
+.confirm-row { display: flex; align-items: flex-start; gap: 12px; background: var(--bg); border-radius: 10px; padding: 14px 16px; cursor: pointer; font-size: 14px; }
+.confirm-row input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--primary); flex: none; }
+.summary-car { width: 132px; height: 88px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--primary)); display: flex; align-items: center; justify-content: center; padding: 8px; flex: none; }
+.summary-car svg { width: 100%; }
+
+/* ---------- Admin dashboard (khớp Figma Morent) ---------- */
+.admin-shell { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+.admin-side { background: var(--card); border-right: 1px solid var(--line); padding: 24px 16px; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+.admin-side__label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; padding: 0 12px; margin: 22px 0 8px; }
+.admin-nav { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 10px; color: var(--muted); font-weight: 600; font-size: 14px; cursor: pointer; transition: background .15s, color .15s; }
+.admin-nav:hover { background: var(--bg); color: var(--ink); }
+.admin-nav.active { background: var(--primary); color: #fff; box-shadow: var(--shadow-sm); }
+.admin-nav svg { width: 20px; height: 20px; flex: none; }
+.admin-main { padding: 24px; background: var(--bg); }
+.stat-tile { display: flex; align-items: center; gap: 14px; }
+.stat-tile__icon { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(53, 99, 233, .12); color: var(--primary); flex: none; }
+.donut-legend-dot { width: 10px; height: 10px; border-radius: 999px; display: inline-block; flex: none; }
+.txn-row { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-top: 1px solid var(--line); }
+.txn-row:first-child { border-top: 0; }
+.txn-thumb { width: 72px; height: 46px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--primary)); display: flex; align-items: center; justify-content: center; padding: 4px; flex: none; }
+@media (max-width: 1024px) {
+  .admin-shell { grid-template-columns: 1fr; }
+  .admin-side { position: static; height: auto; display: flex; flex-wrap: wrap; gap: 6px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .admin-side__label, .admin-side .admin-logout { width: 100%; }
+}
+
+/* ---------- Responsive helpers ---------- */
+@media (max-width: 768px) {
+  .section-title { font-size: 22px; }
+  .promo h2 { font-size: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}

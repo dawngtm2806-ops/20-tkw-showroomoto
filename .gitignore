@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Dữ liệu runtime của server (lịch hẹn/liên hệ/tài khoản demo)
+server/db.json
+
+# Tài liệu nội bộ — KHÔNG đưa lên GitHub (chứa ghi chú riêng tư / phân công)
+PLAN.md
+_private-notes.md
+
+# Log & OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

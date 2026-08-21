@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title_compare">So sánh xe cho thuê | Morent</title>
+  <meta name="description" content="So sánh chi tiết 2 mẫu xe cạnh nhau: giá, thông số kỹ thuật, nhiên liệu, vận hành — chọn xe phù hợp nhất." />
+  <meta property="og:title" content="So sánh xe | Morent" />
+  <meta property="og:description" content="So sánh 2 mẫu xe cạnh nhau về giá và thông số kỹ thuật." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%233563E9'/%3E%3Cpath d='M4 14l1.5-4A2 2 0 017.4 9h9.2a2 2 0 011.9 1L20 14v3a1 1 0 01-1 1h-1v-1H6v1H5a1 1 0 01-1-1z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" /></noscript>
+  <link rel="stylesheet" href="dist/output.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container-x py-8">
+    <nav aria-label="breadcrumb" class="text-sm text-muted mb-2"><a href="index.html" data-i18n="crumb_home">Trang chủ</a> / <span class="text-ink font-semibold" data-i18n="cmp_title">So sánh xe</span></nav>
+    <div class="mb-8">
+      <h1 class="section-title" data-i18n="cmp_title">So sánh xe</h1>
+      <p class="section-sub mt-1" data-i18n="cmp_sub">Chọn 2 mẫu xe để so sánh thông số cạnh nhau và tìm lựa chọn tốt nhất.</p>
+    </div>
+
+    <!-- 2 khe chọn xe -->
+    <div class="grid gap-6 sm:grid-cols-2 mb-8">
+      <div class="card p-5">
+        <label class="font-semibold block mb-2" for="sel-a" data-i18n="cmp_car1">Xe thứ nhất</label>
+        <select class="select mb-4" id="sel-a"></select>
+        <div id="preview-a"></div>
+      </div>
+      <div class="card p-5">
+        <label class="font-semibold block mb-2" for="sel-b" data-i18n="cmp_car2">Xe thứ hai</label>
+        <select class="select mb-4" id="sel-b"></select>
+        <div id="preview-b"></div>
+      </div>
+    </div>
+
+    <!-- Bảng so sánh -->
+    <div class="overflow-x-auto">
+      <table class="w-full card" style="border-collapse:separate;border-spacing:0;min-width:560px" id="compare-table"></table>
+    </div>
+    <p class="text-muted text-sm mt-3" data-i18n="cmp_hint">💡 Ô được tô xanh là chỉ số tốt hơn ở mỗi hàng (giá thấp hơn, công suất lớn hơn, tiêu hao thấp hơn...).</p>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/compare.js"></script>
+</body>
+</html>
