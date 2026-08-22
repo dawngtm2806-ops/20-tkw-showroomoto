@@ -155,9 +155,9 @@ Mở Figma (Dev Mode) và đối chiếu:
 
 | Thành viên | Phụ trách chính |
 |---|---|
-| (điền tên) | … |
-| (điền tên) | … |
-| (điền tên) | … |
+| (Nguyễn Thanh Bình) | index.html && account.html && contact.html  |
+| (Trần Minh Đăng) | car-detail.html && cars.html && admin.html |
+| (Phùng Duy Mạnh) | news.html && compare.html && payment.html |
 
 ---
 
