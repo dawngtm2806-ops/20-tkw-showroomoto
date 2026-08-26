@@ -166,3 +166,8 @@ Mở Figma (Dev Mode) và đối chiếu:
 - Dữ liệu xe/giá/hình ảnh mang tính **minh hoạ cho mục đích học tập**.
 - Trang "thanh toán" chỉ **mô phỏng giao diện** — không thu phí thật, không gửi dữ liệu thẻ đi đâu.
 - Giao diện tham khảo template Figma Community (Morent) đã dẫn nguồn ở đầu file; nội dung điều chỉnh cho ngữ cảnh thuê xe.
+
+
+
+---
+
