@@ -155,10 +155,9 @@ Mở Figma (Dev Mode) và đối chiếu:
 
 | Thành viên | Phụ trách chính |
 |---|---|
-| (Nguyễn Thanh Bình) | index.html && account.html && contact.html  |
-| (Trần Minh Đăng) | car-detail.html && cars.html && admin.html |
-| (Phùng Duy Mạnh) | news.html && compare.html && payment.html |
-
+| Trần Minh Đăng | *Trang chủ · Danh mục xe · Chi tiết xe* (bám Figma); JS bắt buộc: *lọc / tìm kiếm / sắp xếp*, *gallery ảnh + tab thông số*; HTML semantic + CSS/Tailwind responsive các trang này |
+| Phùng Duy Mạnh | *Thanh toán · Quản trị · So sánh · Đặt lịch · Tin tức · Liên hệ · Đăng nhập · Tài khoản*; JS bắt buộc: *validate biểu mẫu*, *so sánh 2 xe*; tính năng: đánh giá có phân trang, *đa ngôn ngữ VI/EN*, dark mode, *Chart.js* |
+| Nguyễn Thanh Bình | *Web động (fetch JSON, tách dữ liệu khỏi code)* + *API Express tự dựng* (xe / đơn thuê / đăng nhập, fallback localStorage); JS bắt buộc: *biểu mẫu thuê ở trang chủ* (chọn ngày/giờ + chặn ngày trả trước ngày nhận + giá tạm tính); *build Tailwind tĩnh + tối ưu Lighthouse + deploy* |
 ---
 
 ## 12. Ghi chú
