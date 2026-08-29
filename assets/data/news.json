@@ -70,5 +70,41 @@
     "excerptEn": "Expanding charging infrastructure and many new models make renting an electric car more convenient.",
     "img": "assets/img/cars/mg-blue.png",
     "banner": "assets/img/dealer/car6.jpg"
+  },
+  {
+    "id": "n7",
+    "title": "Chương trình ưu đãi chào thu: Tặng voucher 500k cho khách hàng mới",
+    "titleEn": "Autumn Special Offer: Get a 500k Voucher for New Customers",
+    "cat": "Khuyến mãi",
+    "date": "15/08/2026",
+    "color": "#ED3F3F",
+    "excerpt": "Áp dụng cho tất cả các dòng xe tự lái khi đặt trực tuyến qua hệ thống Morent lần đầu tiên.",
+    "excerptEn": "Applies to all self-drive car models when booking online through the Morent system for the first time.",
+    "img": "assets/img/cars/sedan.png",
+    "banner": "assets/img/dealer/car4.jpg"
+  },
+  {
+    "id": "n8",
+    "title": "Mẹo tiết kiệm nhiên liệu khi di chuyển đường dài",
+    "titleEn": "Fuel-Saving Tips for Long-Distance Driving",
+    "cat": "Cẩm nang",
+    "date": "10/08/2026",
+    "color": "#1A202C",
+    "excerpt": "Những thói quen lái xe đơn giản giúp bạn tối ưu chi phí nhiên liệu tối đa cho các chuyến đi xa.",
+    "excerptEn": "Simple driving habits to help you maximize fuel cost savings on long trips.",
+    "img": "assets/img/cars/lux.png",
+    "banner": "assets/img/dealer/car7.jpg"
+  },
+  {
+    "id": "n9",
+    "title": "Bổ sung hàng loạt mẫu xe bán tải mới vào hệ thống Morent",
+    "titleEn": "New Pickup Truck Fleet Added to Morent System",
+    "cat": "Sự kiện",
+    "date": "01/08/2026",
+    "color": "#3563E9",
+    "excerpt": "Đáp ứng nhu cầu chở hàng nhẹ và du lịch dã ngoại địa hình của khách hàng trong mùa du lịch cuối năm.",
+    "excerptEn": "Meeting the demand for light cargo and off-road trips for customers during the end-of-year travel season.",
+    "img": "assets/img/cars/suv-brown.png",
+    "banner": "assets/img/dealer/car2.jpg"
   }
 ]
