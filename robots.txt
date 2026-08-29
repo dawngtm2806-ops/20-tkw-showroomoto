@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dawngtm2806-ops.github.io/20-tkw-showroomoto/sitemap.xml
