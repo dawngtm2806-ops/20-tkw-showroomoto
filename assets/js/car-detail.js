@@ -19,14 +19,14 @@
 
   // Đánh giá mẫu (tên riêng giữ nguyên; nội dung dịch theo ngôn ngữ)
   var REVIEWS = [
-    { name: 'Nguyễn Minh Anh', rating: 5, key: 'rv_ex1' },
-    { name: 'Trần Quốc Bảo', rating: 4, key: 'rv_ex2' },
-    { name: 'Lê Thu Hà', rating: 5, key: 'rv_ex3' },
-    { name: 'Phạm Gia Huy', rating: 5, key: 'rv_ex4' },
-    { name: 'Đỗ Khánh Linh', rating: 4, key: 'rv_ex5' },
-    { name: 'Vũ Đức Thắng', rating: 5, key: 'rv_ex6' },
-    { name: 'Hoàng Thảo My', rating: 4, key: 'rv_ex7' }
-  ].map(function (r) { return { name: r.name, rating: r.rating, text: t(r.key, '') }; });
+    { name: 'Nguyễn Minh Anh', role: 'Trưởng phòng kinh doanh', when: '21/07/2026', rating: 5, key: 'rv_ex1' },
+    { name: 'Trần Quốc Bảo', role: 'Kỹ sư phần mềm', when: '20/07/2026', rating: 4, key: 'rv_ex2' },
+    { name: 'Lê Thu Hà', role: 'Giáo viên', when: '18/07/2026', rating: 5, key: 'rv_ex3' },
+    { name: 'Phạm Gia Huy', role: 'Nhiếp ảnh gia', when: '15/07/2026', rating: 5, key: 'rv_ex4' },
+    { name: 'Đỗ Khánh Linh', role: 'Nhân viên marketing', when: '12/07/2026', rating: 4, key: 'rv_ex5' },
+    { name: 'Vũ Đức Thắng', role: 'Chủ doanh nghiệp', when: '09/07/2026', rating: 5, key: 'rv_ex6' },
+    { name: 'Hoàng Thảo My', role: 'Hướng dẫn viên du lịch', when: '05/07/2026', rating: 4, key: 'rv_ex7' }
+  ].map(function (r) { return { name: r.name, role: r.role, when: r.when, rating: r.rating, text: t(r.key, '') }; });
 
   var slides = [], idx = 0, car = null;
   var rvPage = 1, RV_PER = 3; // phân trang đánh giá: 3 mục/trang
@@ -103,29 +103,31 @@
     document.querySelectorAll('#detail-thumbs .thumb').forEach(function (t, i) { t.classList.toggle('active', i === idx); });
   }
 
-  function specItem(icon, label, val) {
-    return '<div class="card p-3 flex items-center gap-3"><span class="text-primary">' + icon + '</span><div><div class="text-xs text-muted">' + label + '</div><div class="font-bold text-sm">' + val + '</div></div></div>';
+  // Bám Figma: mỗi thông số một dòng, nhãn mờ bên trái, giá trị đậm bên phải
+  function specItem(label, val) {
+    return '<div class="detail-spec"><span class="text-muted">' + label + '</span><span class="font-bold">' + val + '</span></div>';
   }
 
   function renderInfo() {
     var old = S.curOld(car) ? S.fmtMoneyN(S.curOld(car)) : '';
     var tankVal = car.tank ? S.specVal(car.tank) : S.fuelLabel(car);
     $('#detail-info').innerHTML =
-      '<p class="text-muted font-semibold">' + car.type + ' · ' + car.brand + ' · ' + car.year + '</p>' +
-      '<h1 class="text-4xl sm:text-5xl font-extrabold mt-1 mb-3" style="line-height:1.1">' + car.name + '</h1>' +
-      '<div class="flex items-center gap-2 mb-4">' + S.starHTML(car.rating) + '<span class="text-muted text-sm">' + car.rating + ' · ' + REVIEWS.length + ' ' + t('lbl_reviews_n', 'đánh giá') + '</span></div>' +
-      '<p class="text-muted mb-6" style="line-height:1.7">' + S.descOf(car) + '</p>' +
-      '<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">' +
-        specItem(S.ICON.fuel, t('d_fuel', 'Bình nhiên liệu'), tankVal) +
-        specItem(S.ICON.gear, t('d_gear', 'Hộp số'), S.transLabel(car)) +
-        specItem(S.ICON.users, t('d_seats', 'Số chỗ'), S.seatsLabel(car)) +
-        specItem(S.ICON.star, t('d_rating', 'Đánh giá'), car.rating + '/5') +
+      '<h1 class="text-3xl sm:text-4xl font-extrabold" style="line-height:1.15">' + car.name + '</h1>' +
+      '<div class="flex items-center gap-2 mt-2 mb-5">' + S.starHTML(car.rating) +
+        '<span class="text-muted text-sm">' + REVIEWS.length + '+ ' + t('lbl_reviews_n', 'đánh giá') + '</span></div>' +
+      '<p class="text-muted mb-7" style="line-height:1.75">' + S.descOf(car) + '</p>' +
+      // Thông số hai cột nhãn–giá trị đúng như Figma
+      '<div class="grid gap-x-10 gap-y-4 sm:grid-cols-2 mb-8">' +
+        specItem(t('f_type', 'Kiểu dáng'), car.type) +
+        specItem(t('d_seats', 'Số chỗ'), S.seatsLabel(car)) +
+        specItem(t('d_gear', 'Hộp số'), S.transLabel(car)) +
+        specItem(t('d_fuel', 'Bình nhiên liệu'), tankVal) +
       '</div>' +
-      // Giá + nút đẩy xuống đáy (ngang hàng với 3 ảnh bên trái); giá cũ nằm TRÊN giá hiện tại
-      '<div class="flex flex-wrap items-end justify-between gap-4 pt-4" style="margin-top:auto">' +
+      // Giá nằm sát dưới thông số; giá cũ gạch ngang ở DƯỚI giá hiện tại
+      '<div class="flex flex-wrap items-center justify-between gap-4">' +
         '<div>' +
-          (old ? '<div class="price-old text-base mb-1">' + old + '/' + S.unitDay() + '</div>' : '') +
-          '<div class="text-3xl font-extrabold text-primary">' + S.fmtMoneyN(S.curPrice(car)) + '<span class="text-muted text-base font-semibold">/' + S.unitDay() + '</span></div>' +
+          '<div class="text-3xl font-extrabold">' + S.fmtMoneyN(S.curPrice(car)) + '<span class="text-muted text-base font-semibold">/' + S.unitDay() + '</span></div>' +
+          (old ? '<div class="price-old text-base" style="margin-top:4px">' + old + '</div>' : '') +
         '</div>' +
         '<div class="flex flex-wrap gap-3">' +
           '<a class="btn btn-outline" href="test-drive.html?car=' + car.id + '">' + t('btn_book', 'Đặt lịch nhận xe') + '</a>' +
@@ -136,16 +138,9 @@
 
   function renderTabs() {
     // Tổng quan
-    var highlights = [
-      t('hi1', 'Thiết kế hiện đại, cao cấp'), t('hi2', 'Trang bị an toàn đầy đủ'),
-      t('hi3', 'Tiết kiệm nhiên liệu'), t('warranty_of', 'Bảo hành chính hãng') + ' ' + (car.brand)
-    ];
     $('[data-panel="overview"]').innerHTML =
-      '<p class="text-muted mb-5" style="line-height:1.8;max-width:70ch">' + S.descOf(car) + ' ' + t('ov_a', 'Mẫu') + ' ' + car.name +
-      ' ' + t('ov_b', 'là lựa chọn đáng cân nhắc trong phân khúc') + ' ' + car.type + ' ' + t('ov_c', ', cân bằng giữa thiết kế, vận hành và chi phí sử dụng.') + '</p>' +
-      '<div class="grid gap-3 sm:grid-cols-2" style="max-width:640px">' + highlights.map(function (h) {
-        return '<div class="flex items-center gap-2"><span class="text-primary">' + S.ICON.arrow + '</span><span>' + h + '</span></div>';
-      }).join('') + '</div>';
+      '<p class="text-muted" style="line-height:1.8;max-width:70ch">' + S.descOf(car) + ' ' + t('ov_a', 'Mẫu') + ' ' + car.name +
+      ' ' + t('ov_b', 'là lựa chọn đáng cân nhắc trong phân khúc') + ' ' + car.type + ' ' + t('ov_c', ', cân bằng giữa thiết kế, vận hành và chi phí sử dụng.') + '</p>';
 
     // Thông số kỹ thuật
     var base = [
@@ -206,7 +201,8 @@
         '<div class="field mt-4" data-field="rv-text"><label for="rv-text">' + t('rv_comment', 'Nhận xét') + '</label><textarea class="textarea" id="rv-text" rows="3" placeholder="' + t('rv_ph', 'Cảm nhận của bạn về mẫu xe này (tối thiểu 10 ký tự)') + '"></textarea><span class="field__error"></span></div>' +
         '<button class="btn btn-primary mt-4" type="submit">' + t('rv_submit', 'Gửi đánh giá') + '</button>' +
       '</form>' +
-      '<div class="grid gap-4" id="rv-list" style="max-width:720px"></div>' +
+      // Figma gom mọi nhận xét vào chung một thẻ trắng, không viền từng cái
+      '<div class="card grid" id="rv-list" style="max-width:820px;padding:8px 24px"></div>' +
       '<div id="rv-pager" class="flex items-center justify-center gap-2 mt-5"></div>';
 
     paintReviews(list);
@@ -249,15 +245,28 @@
     });
   }
 
+  // Bố cục bám Figma: avatar · tên + chức danh bên trái, ngày + sao bên phải,
+  // nội dung nhận xét trải hết bề ngang phía dưới.
   function reviewCard(rv) {
-    var when = rv.at ? new Date(rv.at).toLocaleDateString(S.isEN() ? 'en-US' : 'vi-VN') : '';
+    var when = rv.when || (rv.at ? new Date(rv.at).toLocaleDateString(S.isEN() ? 'en-US' : 'vi-VN') : '');
     var ini = (rv.name || 'K').trim().charAt(0).toUpperCase();
-    var av = '<span style="width:44px;height:44px;border-radius:999px;background:var(--primary);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">' + ini + '</span>';
-    return '<div class="card p-5"><div class="flex items-start gap-3">' + av +
-      '<div class="flex-1"><div class="flex items-center justify-between gap-2">' +
-        '<div><p class="font-bold">' + rv.name + '</p>' + (when ? '<p class="text-muted text-xs">' + when + '</p>' : '') + '</div>' +
-        S.starHTML(rv.rating) + '</div>' +
-      '<p class="text-muted mt-2" style="line-height:1.7">' + rv.text + '</p></div></div></div>';
+    return '<div class="rv-item">' +
+      '<div class="flex items-start gap-4">' +
+        '<span class="rv-avatar">' + ini + '</span>' +
+        '<div class="flex-1" style="min-width:0">' +
+          '<div class="flex items-start justify-between gap-3">' +
+            '<div>' +
+              '<p class="font-bold">' + rv.name + '</p>' +
+              (rv.role ? '<p class="text-muted text-sm" style="margin-top:2px">' + rv.role + '</p>' : '') +
+            '</div>' +
+            '<div style="flex:none;text-align:right">' +
+              (when ? '<p class="text-muted text-sm">' + when + '</p>' : '') +
+              '<div class="flex justify-end" style="margin-top:6px">' + S.starHTML(rv.rating) + '</div>' +
+            '</div>' +
+          '</div>' +
+          '<p class="text-muted" style="line-height:1.7;margin-top:12px">' + rv.text + '</p>' +
+        '</div>' +
+      '</div></div>';
   }
   function setFieldErr(f, msg) { var w = document.querySelector('[data-field="' + f + '"]'); if (!w) return; w.classList.add('has-error'); var e = w.querySelector('.field__error'); if (e) e.textContent = msg; }
 
