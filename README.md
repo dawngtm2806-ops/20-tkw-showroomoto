@@ -136,19 +136,25 @@ Bo góc thẻ: 12px · nút: 10px · Breakpoint: sm 640 · md 768 · lg 1024 · 
 - ✅ Dựng đủ 11 trang, bám Figma 5 màn (Home/Category/Detail/Payment/Admin) + mobile 375px
 - ✅ Web động (fetch JSON) + API Express tự dựng (đã test chạy thật) + fallback localStorage
 - ✅ Đủ tính năng JS bắt buộc + nhiều tính năng vượt (auth, so sánh, review, i18n VI/EN, dark mode)
-- ✅ Responsive 3 breakpoint · 0 lỗi console · Lighthouse **Perf 91 · A11y 95 · BP 100 · SEO 100**
-- ⬜ Deploy link live (GitHub Pages/Vercel cho frontend; Render/Railway cho backend)
+- ✅ Responsive 3 breakpoint · 0 lỗi console
+- ✅ Trang chi tiết xe chỉnh bám Figma: khối thuê xe gom vào một thẻ, thông số xếp hai
+  cột nhãn–giá trị, ảnh nội thất phủ kín khung, nhận xét đưa lên ngay dưới Tổng quan
+- 🟡 Deploy link live — dùng Netlify (repo để private nên không bật được GitHub Pages)
+- 🟡 Lighthouse đo ở máy: **Perf 91 · A11y 95 · BP 100 · SEO 100** — cần đo lại trên bản deploy
 - ⬜ Báo cáo (20 trang) · Video demo (5 phút) · Ảnh đối chiếu Figma ↔ web
+- ⬜ Chèn link deploy và ảnh 3 breakpoint vào README
 
 ## 10. Checklist đối chiếu Figma (đảm bảo GATE 20%)
 
 Mở Figma (Dev Mode) và đối chiếu:
-- [ ] Màu primary `#3563E9`, chữ phụ `#90A3BF`, nền `#F6F7F9`
-- [ ] Font Plus Jakarta Sans, cỡ heading/paragraph khớp
-- [ ] Bo góc, khoảng cách (padding/gap) card khớp
-- [ ] Hero 2 banner promo + thanh Pick-Up/Drop-Off có nút swap
-- [ ] Card xe: tim ❤ · tên · loại · ảnh · 3 thông số · giá · nút — đúng vị trí
-- [ ] Footer Morent: logo + tagline + cột link + dòng bản quyền
+- [x] Màu primary `#3563E9`, chữ phụ `#90A3BF`, nền `#F6F7F9`
+- [x] Font Plus Jakarta Sans, cỡ heading/paragraph khớp
+- [x] Bo góc, khoảng cách (padding/gap) card khớp
+- [x] Hero 2 banner promo + thanh Pick-Up/Drop-Off có nút swap
+- [x] Card xe: tim ❤ · tên · loại · ảnh · 3 thông số · giá · nút — đúng vị trí
+- [x] Thẻ thuê xe ở trang chi tiết: tên · sao · mô tả · thông số 2 cột · giá cũ gạch dưới
+      giá mới · nút thuê
+- [x] Footer Morent: logo + tagline + cột link + dòng bản quyền
 - [ ] Chụp vài ảnh **so sánh Figma ↔ web** cho báo cáo
 
 ## 11. Thành viên nhóm & phân công
