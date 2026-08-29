@@ -6,7 +6,9 @@ chi tiết xe có đánh giá người dùng, thanh toán nhiều bước và b�
 
 - **Giao diện mẫu (Figma):** *Car Rent Website Design — Pickolab Studio (Morent)* — thương hiệu **Morent**.
   <https://www.figma.com/community/file/1138316365849534403/car-rent-website-design-pickolab-studio>
-- **Trạng thái:** hoàn thiện phần web (VI/EN, responsive, API tự dựng). Còn lại: deploy · báo cáo · video.
+- **Sản phẩm đã deploy:** <https://dawngtm2806-ops.github.io/20-tkw-showroomoto/>
+- **Trạng thái:** hoàn thiện phần web (VI/EN, responsive, API tự dựng) và đã deploy.
+  Còn lại: báo cáo · video demo.
 
 ---
 
@@ -139,10 +141,12 @@ Bo góc thẻ: 12px · nút: 10px · Breakpoint: sm 640 · md 768 · lg 1024 · 
 - ✅ Responsive 3 breakpoint · 0 lỗi console
 - ✅ Trang chi tiết xe chỉnh bám Figma: khối thuê xe gom vào một thẻ, thông số xếp hai
   cột nhãn–giá trị, ảnh nội thất phủ kín khung, nhận xét đưa lên ngay dưới Tổng quan
-- 🟡 Deploy link live — dùng Netlify (repo để private nên không bật được GitHub Pages)
+- ✅ Deploy bằng GitHub Pages, tự cập nhật mỗi lần push:
+  <https://dawngtm2806-ops.github.io/20-tkw-showroomoto/>
+- ✅ Bản đồ trang Liên hệ chuyển sang Google Maps do OpenStreetMap chặn nhúng
 - 🟡 Lighthouse đo ở máy: **Perf 91 · A11y 95 · BP 100 · SEO 100** — cần đo lại trên bản deploy
 - ⬜ Báo cáo (20 trang) · Video demo (5 phút) · Ảnh đối chiếu Figma ↔ web
-- ⬜ Chèn link deploy và ảnh 3 breakpoint vào README
+- ⬜ Chèn ảnh 3 breakpoint vào README
 
 ## 10. Checklist đối chiếu Figma (đảm bảo GATE 20%)
 
