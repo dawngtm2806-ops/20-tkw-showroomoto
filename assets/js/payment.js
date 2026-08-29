@@ -42,6 +42,20 @@
     $('#pickup-time').innerHTML = timeOpts; $('#drop-time').innerHTML = timeOpts;
     $('#pickup-date').min = todayStr(0); $('#pickup-date').value = todayStr(1);
     $('#drop-date').min = todayStr(0); $('#drop-date').value = todayStr(3);
+
+    // Ngày bàn giao không được trước ngày nhận: khoá vùng chọn và tự kéo theo
+    // khi người dùng dời ngày nhận lên sau. Giống quy tắc ở biểu mẫu trang chủ.
+    function dongBoNgay() {
+      var p = $('#pickup-date'), d = $('#drop-date');
+      if (!p || !d) return;
+      d.min = p.value || todayStr(0);
+      if (p.value && d.value && d.value < p.value) d.value = p.value;
+      renderTotals();
+    }
+    $('#pickup-date').addEventListener('change', dongBoNgay);
+    $('#drop-date').addEventListener('change', dongBoNgay);
+    dongBoNgay();
+
     renderTotals(); // tính lại sau khi đã có ngày nhận/trả
 
     // ----- Prefill từ tài khoản -----
