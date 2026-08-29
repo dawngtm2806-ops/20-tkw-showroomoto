@@ -167,8 +167,8 @@ Mở Figma (Dev Mode) và đối chiếu:
 | Thành viên | Phụ trách chính |
 |---|---|
 | Trần Minh Đăng | *Trang chủ · Danh mục xe · Chi tiết xe* (bám Figma); JS bắt buộc: *lọc / tìm kiếm / sắp xếp*, *gallery ảnh + tab thông số*; HTML semantic + CSS/Tailwind responsive các trang này |
-| Phùng Duy Mạnh | *Thanh toán · Quản trị · So sánh · Đặt lịch · Tin tức · Liên hệ · Đăng nhập · Tài khoản*; JS bắt buộc: *validate biểu mẫu*, *so sánh 2 xe*; tính năng: đánh giá có phân trang, *đa ngôn ngữ VI/EN*, dark mode, *Chart.js* |
-| Nguyễn Thanh Bình | *Web động (fetch JSON, tách dữ liệu khỏi code)* + *API Express tự dựng* (xe / đơn thuê / đăng nhập, fallback localStorage); JS bắt buộc: *biểu mẫu thuê ở trang chủ* (chọn ngày/giờ + chặn ngày trả trước ngày nhận + giá tạm tính); *build Tailwind tĩnh + tối ưu Lighthouse + deploy* |
+| Phùng Duy Mạnh | *Thanh toán · Quản trị · So sánh · Đặt lịch · Tin tức · Liên hệ*; JS bắt buộc: *validate biểu mẫu*, *so sánh 2 xe*; tính năng: đánh giá có phân trang, *đa ngôn ngữ VI/EN*, dark mode, *Chart.js* |
+| Nguyễn Thanh Bình | *Đăng nhập / Đăng ký · Tài khoản của tôi*; *web động (fetch JSON, tách dữ liệu khỏi code)* + *API Express tự dựng* (xe / đơn thuê / đăng nhập, fallback localStorage); JS bắt buộc: *biểu mẫu thuê ở trang chủ* (chọn ngày/giờ + chặn ngày trả trước ngày nhận + giá tạm tính); *build Tailwind tĩnh + tối ưu Lighthouse + deploy* |
 ---
 
 ## 12. Ghi chú
