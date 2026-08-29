@@ -144,7 +144,8 @@ Bo góc thẻ: 12px · nút: 10px · Breakpoint: sm 640 · md 768 · lg 1024 · 
 - ✅ Deploy bằng GitHub Pages, tự cập nhật mỗi lần push:
   <https://dawngtm2806-ops.github.io/20-tkw-showroomoto/>
 - ✅ Bản đồ trang Liên hệ chuyển sang Google Maps do OpenStreetMap chặn nhúng
-- 🟡 Lighthouse đo ở máy: **Perf 91 · A11y 95 · BP 100 · SEO 100** — cần đo lại trên bản deploy
+- ✅ Lighthouse đo trên bản deploy, Chrome ẩn danh, thiết bị Mobile:
+  **Performance 88 · Accessibility 96 · Best Practices 100 · SEO 100**
 - ⬜ Báo cáo (20 trang) · Video demo (5 phút) · Ảnh đối chiếu Figma ↔ web
 - ⬜ Chèn ảnh 3 breakpoint vào README
 
