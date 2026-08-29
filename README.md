@@ -146,8 +146,10 @@ Bo góc thẻ: 12px · nút: 10px · Breakpoint: sm 640 · md 768 · lg 1024 · 
 - ✅ Bản đồ trang Liên hệ chuyển sang Google Maps do OpenStreetMap chặn nhúng
 - ✅ Lighthouse đo trên bản deploy, Chrome ẩn danh, thiết bị Mobile:
   **Performance 88 · Accessibility 96 · Best Practices 100 · SEO 100**
-- ⬜ Báo cáo (20 trang) · Video demo (5 phút) · Ảnh đối chiếu Figma ↔ web
-- ⬜ Chèn ảnh 3 breakpoint vào README
+- ✅ Ảnh đối chiếu Figma ↔ web cho 11 trang, đặt trong file Figma riêng của nhóm:
+  <https://www.figma.com/design/tlqn7eCgGhnQWsq9g6cMuw/20-tkw-shoowroomoto>
+- ✅ Báo cáo hoàn chỉnh (đủ Bảng 0.1 → 0.5, Chương 1–6, Phụ lục A–B)
+- 🟡 Video demo (5 phút) — mỗi thành viên thuyết minh phần mình, đang ghép
 
 ## 10. Checklist đối chiếu Figma (đảm bảo GATE 20%)
 
