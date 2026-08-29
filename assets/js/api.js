@@ -7,15 +7,21 @@
 (function (global) {
   'use strict';
 
-  // Cùng origin nếu web được phục vụ bởi server Express (cổng 3000),
-  // ngược lại trỏ thẳng tới localhost:3000 (vd khi mở bằng Live Server).
-  var API_BASE = (location.port === '3000' || location.port === '')
-    ? '/api'
-    : 'http://localhost:3000/api';
+  // Chỉ gọi API khi web đang chạy ở máy cá nhân. Trang https nào cũng có port
+  // rỗng, nên nếu chỉ xét port thì bản deploy tĩnh sẽ gửi POST vào chính nó và
+  // nhận về 405. Lỗi 405 có mã status nên các trang không nhận ra là "không có
+  // server" để lùi về localStorage, dẫn tới đăng ký/đăng nhập báo lỗi.
+  var host = location.hostname;
+  var chayOMay = (host === 'localhost' || host === '127.0.0.1' || host === '');
+  var API_BASE = !chayOMay ? null
+    : (location.port === '3000' ? '/api' : 'http://localhost:3000/api');
 
   function token() { try { return localStorage.getItem('sr_token') || ''; } catch (e) { return ''; } }
 
   function req(pathname, options) {
+    // Không có server: trả lỗi KHÔNG kèm status để mọi trang hiểu là chạy tĩnh
+    // và tự dùng bản lưu trên trình duyệt.
+    if (!API_BASE) return Promise.reject(new Error('Chạy tĩnh, không có server'));
     options = options || {};
     var headers = { 'Content-Type': 'application/json' };
     if (options.auth && token()) headers['Authorization'] = 'Bearer ' + token();
